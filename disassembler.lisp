@@ -117,7 +117,7 @@
 
 ;データ部分の出力
 (defun read-data (bin-str start end bank ostr &key (caption ""))
-  (format ostr "-data:~a-~%" caption)
+  (format ostr "==data:~a==~%" caption)
   (do ((row (- start (mod start #x10)) (+ row #x10)))
       ((>= row end))
     (let ((row-end (+ row #x10)))
@@ -301,6 +301,7 @@
 
 
 
+(defparameter description-lst nil)
 
 (defun disassemble-file (bin-path &optional (out-path nil) (cfg-path nil))
   (with-open-file (bin-str (parse-native-namestring bin-path)
@@ -325,6 +326,7 @@
 		   (not (disassemble-z80 bin-str #x4000 #x8000 b ostr))))))
 	  (with-open-file (cstr (parse-native-namestring cfg-path)
 				:direction :input)
+	    (setf description-lst (read cstr nil))
 	    (do ((begin #x0150)
 		 (next-data (read cstr nil) (read cstr nil)))
 		((null next-data) (disassemble-z80 bin-str begin #x4000 0 ostr))

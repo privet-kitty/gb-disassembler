@@ -1,11 +1,12 @@
 2014-12-04(木) 15:57:02
 
 大昔に書いたゲームボーイソフトの解析用逆アセンブラ。
-インストールの際にはsbclとquicklispがあることを想定しているけれど、
+インストールの際にはsbclとquicklispがあることを想定しているが、
 quicklispはなくても使えるはず。
 http://www.sbcl.org/
 http://www.quicklisp.org/beta/
 ともかくもWindows8.1+Cygwin+SBCL1.1.17(x64)上で動くことを確認した。
+以前はLinux+SBCL(x32)で使っていた。
 
 Makefileを開いてASDFのレジストリの正しいパス（asdf:*central-registry*で
 見れる）をDESTに指定してから
@@ -23,4 +24,4 @@ disasgb ロムファイル [注記ファイル] > 出力ファイル
 Windowsのシンボリック・リンクがうまく機能していないようなので、make
 installするとASDFのレジストリ（たとえば
 /home/username/quicklisp/quicklisp）に.lisp、.asdファイルを全部コピーす
-るようにした。
+るようにしてある。

@@ -219,7 +219,13 @@
    (make-mnemonic :opcode "JP" :type '(REG 16BITNUM) :operand '("Z") :len 3)
    (make-mnemonic :opcode "SWAP" :type '(8BITNUM) :operand NIL :len 2)
    (make-mnemonic :opcode "CALL" :type '(REG 16BITNUM) :operand '("Z") :len 3)
-   (make-mnemonic :opcode "CALL" :type '(16BITNUM) :operand NIL :len 3)
+   (make-mnemonic :opcode "CALL" :type '(16BITNUM) :operand NIL :len 3 :special
+		  #'(lambda (bins pos ostr)
+		      (format ostr "CALL  ~2,'0x~2,'0x" (third bins) (second bins))
+		      (let* ((num (+ (* (third bins) #x100) (second bins)))
+			     (txt (cdr (assoc num description-lst :test #'=))))
+			(when txt
+			  (format ostr "    //~A" txt)))))
    (make-mnemonic :opcode "ADC" :type '(REG 8BITNUM) :operand '("A") :len 2)
    (make-mnemonic :opcode "RST" :type '(REG) :operand '("08H") :len 1)
    (make-mnemonic :opcode "RET" :type '(REG) :operand '("NC") :len 1)

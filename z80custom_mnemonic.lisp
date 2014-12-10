@@ -223,7 +223,7 @@
 		  #'(lambda (bins pos ostr)
 		      (format ostr "CALL  ~2,'0x~2,'0x" (third bins) (second bins))
 		      (let* ((num (+ (* (third bins) #x100) (second bins)))
-			     (txt (cdr (assoc num description-lst :test #'=))))
+			     (txt (cadr (assoc num description-lst :test #'=))))
 			(when txt
 			  (format ostr "    //~A" txt)))))
    (make-mnemonic :opcode "ADC" :type '(REG 8BITNUM) :operand '("A") :len 2)

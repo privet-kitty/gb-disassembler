@@ -43,12 +43,13 @@ You can omit the config file.
 
 # Structure of Configuration File
 By a configuration file you can  
-1. tell the disassembler where are data blocks in the ROM file and
+1. tell the disassembler where are data blocks in the ROM file and  
 2. name or annotate specific functions.  
 Of course, you can do disassembling without it. In that case, however, it will also disassemble data blocks and sometimes print a wrong code near the border of a data block and a code block.
 
 
 The following is an example of a configuration file.
+
     ;You can comment it out with semicolon. The line will be ignored after it.
     ;First, you write a note in conjunction with a function call such as CALL 0180h.
     

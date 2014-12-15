@@ -51,7 +51,7 @@ Of course, you can do disassembling without it. In that case, however, it will a
 The following is an example of a configuration file.
 
     ;You can comment it out with semicolon. The line will be ignored after it.
-    ;First, you write a note in conjunction with a function call such as CALL 0180h.
+    ;First, you write notes in conjunction with function calls, such as CALL 0180h.
     
     (
     (#x0180 "random number generator")

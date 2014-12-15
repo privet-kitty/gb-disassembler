@@ -89,12 +89,12 @@ The following is an example of a configuration file.
     nil ;ROM8 end
     nil ;ROM9 end
     nil ;ROMa end
-    ;....
+    ;...
     
     ;For every bank, you can point out data blocks as follows:
     ;BEGINNING_ADDRESS FINAL_ADDRESS+1 "TITLE OF THE BLOCK"
-    ;When you want to finish designating addresses for a bank,
-    ;you must put nil and then you can go to the next bank.
+    ;When you want to finish listing data addresses for a bank,
+    ;you have to put nil and then you can go to the next bank.
     ;If you write as above, the 4000h-40FFh of the bank 7 will be indicated as data.
     
     ;==data:Weapon Data==
@@ -102,6 +102,7 @@ The following is an example of a configuration file.
     ;07:4010 08 18 07 03 4A 14 2C 00 0D 00 00 00 15 00 00 00
     ;07:4020 11 30 0D 00 33 0F 00 0E 00 00 00 00 07 1C 00 09
     ;07:4040 08 1F 28 01 12 14 0B 00 0D 00 00 00 10 03 00 10
+    ;...
     
     ;When the disassembler reads the end-of-file, it will be interpreted as nil.
     ;Therefore, you don't need to count the total number of banks and

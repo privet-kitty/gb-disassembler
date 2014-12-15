@@ -23,7 +23,7 @@ And then, you can make it install.
 
     $ make install
 
-Makefile is written so that it will copy all of the .lisp files to the ASDF registry (e.g. /home/username/quicklisp/quicklisp), if you do `make install`. That is for my personal reasons: the system of symbolic link doesn't work in my environment as it would do on a Linux machine. On a more standard platform, you will be able to avoid it through the following way if you want:  
+Makefile is written so that it will copy all of the .lisp files to the ASDF registry (e.g. /home/username/quicklisp/quicklisp), if you do `make install`. This is for my personal reasons: the system of symbolic link doesn't work in my environment as it would do on a Linux machine. On a more standard platform, you will be able to avoid it through the following way in place of `make install` if you want:  
 
     $ ln -s z80disas.asd /path/of/asdf/registry/
     $ sbcl

@@ -16,6 +16,7 @@ I have confirmed that it runs on Windows8.1 + Cygwin + SBCL1.1.17(x64) and I use
 
 First, you should open Makefile and assign `DEST` the correct path of the ASDF registry, which you can get on your Lisp implementation by a variable `asdf:*central-registry*`.  
 
+    $ sbcl
     (require :asdf)
     asdf:*central-registry*
 

@@ -10,11 +10,11 @@ It is a disassembler for Nintendo Gameboy ROMs, mainly aimed at reverse engineer
 
 
 # Installation
-It is supposed that SBCL and ASDF exist in your environment. It can, however, probably be carried out on another Common Lisp implementations too.  
+It is supposed that SBCL exists in your environment. It can, however, probably be carried out on another Common Lisp implementations with the ASDF system too.  
 <http://www.sbcl.org/>  
 I have confirmed that it runs on Windows8.1 + Cygwin + SBCL1.1.17(x64) and I used to carry it out on Linux + SBCL(x32) a long time ago.
 
-First, you should open Makefile and assign DEST the correct path of the ASDF registry, which you can get on your Lisp implementation by a variable `asdf:*central-registry*`.  
+First, you should open Makefile and assign `DEST` the correct path of the ASDF registry, which you can get on your Lisp implementation by a variable `asdf:*central-registry*`.  
 
     (require :asdf)
     asdf:*central-registry*

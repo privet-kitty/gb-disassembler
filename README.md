@@ -1,10 +1,7 @@
 gb-disassembler
 ===============
 
-Disassembler for Gameboy ROMs
-
-# About This Tool
-It is a disassembler for Nintendo Gameboy ROMs, mainly aimed at reverse engineering.
+It is a disassembler for Nintendo Gameboy, mainly aimed at reverse engineering.
 
 
 

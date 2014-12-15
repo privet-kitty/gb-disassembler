@@ -43,7 +43,7 @@ You can omit the config file.
 By a configuration file you can  
 1. tell the disassembler where are data blocks in the ROM file and  
 2. name or annotate specific functions.  
-Of course, you can do disassembling without it. In that case, however, it will also disassemble data blocks and sometimes print a wrong code near the border of a data block and a code block.
+As mentioned above, you can do disassembling without it. In that case, however, it will also disassemble data blocks and sometimes print a wrong code near the border of a data block and a code block.
 
 
 The following is an example of a configuration file.

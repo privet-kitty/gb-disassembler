@@ -46,8 +46,8 @@ Of course, you can do disassembling without it. In that case, however, it will a
 
 
 ↓An example of a configuration file↓  
-;You can comment it out with semicolon. The line will be ignored after it.  
-;First, you write a note in conjunction with a function call, such as CALL 0180h.  
+    ;You can comment it out with semicolon. The line will be ignored after it.  
+    ;First, you write a note in conjunction with a function call, such as CALL 0180h.  
 
     (
     (#x0180 "random number generator")
@@ -55,17 +55,17 @@ Of course, you can do disassembling without it. In that case, however, it will a
     (#x7019 "add b to the success rate (a450)")
     )
 
-;It is in the form of (ADDRESS "NOTE").  
-;#x means a hex number and can be omitted when you want to put a decimal number.  
-;If you write it, the output of the disassembler will be like the follwing:  
-;...  
-;00:30BB CD 80 01    CALL  0180    //random number generator  
-;...  
-;As the bank is never taken into account, if the duplication of an address between different banks exists, you should note so on your own.  
-;The whole ()s must be parenthesized with () as above.  
-;If you don't need this function, you must just write ().  
+    ;It is in the form of (ADDRESS "NOTE").  
+    ;#x means a hex number and can be omitted when you want to put a decimal number.  
+    ;If you write it, the output of the disassembler will be like the follwing:  
+    ;...  
+    ;00:30BB CD 80 01    CALL  0180    //random number generator  
+    ;...  
+    ;As the bank is never taken into account, if the duplication of an address between different banks exists, you should note so on your own.  
+    ;The whole ()s must be parenthesized with () as above.  
+    ;If you don't need this function, you must just write ().  
 
-;Second, you set addresses of data blocks for each bank.  
+    ;Second, you set addresses of data blocks for each bank.  
     nil ;ROM0 end
     nil ;ROM1 end
     nil ;ROM2 end
@@ -79,16 +79,16 @@ Of course, you can do disassembling without it. In that case, however, it will a
     nil ;ROM7 end
     nil ;ROM8 end
     nil ;ROM9 end
-   nil ;ROMa end
-;....
-;For each bank, you can point out data blocks as follows:  
-;BEGINNING_ADDRESS FINAL_ADDRESS+1 "TITLE OF THE BLOCK"  
-;When you want to finish the enumerating for the bank, you must put nil and then you can go to the next bank.  
-;If you set as above, the 4000h-40FFh of the bank 7 will be indicated as data.  
-;==data:Weapon Data==  
-;07:4000 02 22 10 03 10 00 0A 0E 00 00 00 00 08 00 00 01  
-;07:4010 08 18 07 03 4A 14 2C 00 0D 00 00 00 15 00 00 00  
-;07:4020 11 30 0D 00 33 0F 00 0E 00 00 00 00 07 1C 00 09  
-;07:4040 08 1F 28 01 12 14 0B 00 0D 00 00 00 10 03 00 10  
-;When the disassembler reads the end-of-file, it will be interpreted as nil.  
-;Therefore, you don't need to count the total number of banks and may just finish to write the designation wherever you want.
+    nil ;ROMa end
+    ;....
+    ;For each bank, you can point out data blocks as follows:  
+    ;BEGINNING_ADDRESS FINAL_ADDRESS+1 "TITLE OF THE BLOCK"  
+    ;When you want to finish the enumerating for the bank, you must put nil and then you can go to the next bank.  
+    ;If you set as above, the 4000h-40FFh of the bank 7 will be indicated as data.  
+    ;==data:Weapon Data==  
+    ;07:4000 02 22 10 03 10 00 0A 0E 00 00 00 00 08 00 00 01  
+    ;07:4010 08 18 07 03 4A 14 2C 00 0D 00 00 00 15 00 00 00  
+    ;07:4020 11 30 0D 00 33 0F 00 0E 00 00 00 00 07 1C 00 09  
+    ;07:4040 08 1F 28 01 12 14 0B 00 0D 00 00 00 10 03 00 10  
+    ;When the disassembler reads the end-of-file, it will be interpreted as nil.  
+    ;Therefore, you don't need to count the total number of banks and may just finish to write the designation wherever you want.

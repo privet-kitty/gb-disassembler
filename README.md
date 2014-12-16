@@ -39,7 +39,7 @@ You can omit the config file.
 
 
 
-# Structure of Configuration File
+# Configuration File
 By a configuration file you can  
 1. tell the disassembler where are data blocks in the ROM file and  
 2. name or annotate specific functions.  
